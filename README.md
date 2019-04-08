@@ -1,2 +1,2 @@
 # my-next
-next学习
+其他
