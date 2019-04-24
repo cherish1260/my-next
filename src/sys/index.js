@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import QRCode from 'qrcode.react';
 import { Toast } from 'antd-mobile';
-import logo from 'img/logo.svg'
+import logo from 'img/logo.svg';
+// import Fetch from 'Fetch';
 import style from './index.less';
-import Fetch from 'Fetch';
 
 class App extends Component {
   componentDidMount() {
@@ -15,11 +15,12 @@ class App extends Component {
   }
 
   test() {
-    // H5 plus事件处理  
+    // H5 plus事件处理
     const md = new MobileDetect(window.navigator.userAgent);
     console.log(md);
     Toast.info(md.mobile());
   }
+
   render() {
     return (
       <div className={style.container}>
@@ -41,7 +42,7 @@ class App extends Component {
             className={style.btn}
             onClick={() => {
               this.test();
-              if (typeof WeixinJSBridge == "undefined") {
+              if (typeof WeixinJSBridge === 'undefined') {
                 if (document.addEventListener) {
                   document.addEventListener('WeixinJSBridgeReady', this.onBridgeReady, false);
                 } else if (document.attachEvent) {
@@ -54,7 +55,7 @@ class App extends Component {
             }}
           >
             登录
-            </div>
+          </div>
           <div className={`${style.text} f-ellipsis2`}>skjgfdsfggfdgkkkkkkkkkkkkkkkkkkkkjhgjjjj妇科但是也有佛igofdjjjjjjjjjgdsfgdjgkjsgkgjkghldfg</div>
         </header>
       </div>

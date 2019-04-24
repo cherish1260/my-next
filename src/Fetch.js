@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: "https://api.weixin.qq.com/cgi-bin",
+  baseURL: 'https://api.weixin.qq.com/cgi-bin',
   timeout: 10 * 1000,
   headers: { 'X-Requested-With': 'XMLHttpRequest' },
-  withCredentials: true
-})
+  withCredentials: true,
+});
 
 instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 
 // 添加一个请求拦截器
-axios.interceptors.request.use(function (request) {
+axios.interceptors.request.use((request) => {
   // Do something before request is sent
   const { params = {} } = request;
   const reqParams = {};
@@ -20,13 +20,11 @@ axios.interceptors.request.use(function (request) {
   });
   request.params = reqParams;
   return request;
-}, function (error) {
-  // Do something with request error
-  return Promise.reject(error);
-});
+}, error => Promise.reject(error)
+);
 
 // 添加一个响应拦截器
-axios.interceptors.response.use(function (response) {
+axios.interceptors.response.use((response) => {
   let res = response;
   console.log('res', response);
   // Do something with response data
@@ -48,9 +46,7 @@ axios.interceptors.response.use(function (response) {
   // 正常，则直接返回数据对象
   res = data.data || data.dataList;
   return res;
-}, function (error) {
-  // Do something with response error
-  return Promise.reject(error);
-});
+}, error => Promise.reject(error)
+);
 
 export default instance;

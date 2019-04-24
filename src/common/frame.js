@@ -9,6 +9,6 @@ const Frame = (props) => {
       {children}
     </div>
   );
-}
+};
 
 export default Frame;
