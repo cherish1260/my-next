@@ -17,6 +17,7 @@ module.exports = {
     extensions: ['.js'],
     alias: {
       src: SRC_PATH,
+      common: path.resolve(SRC_PATH, 'common'),
     },
   },
   entry: {
@@ -37,20 +38,21 @@ module.exports = {
     },
     { // css loader
       test: /\.css$/,
-      include: SRC_PATH,
+      exclude: path.resolve(SRC_PATH, 'sys'),
       use: ['style-loader', 'css-loader', 'postcss-loader'],
     }, { // less loader
       test: /\.less$/,
-      include: SRC_PATH,
+      exclude: path.resolve(SRC_PATH, 'sys'),
       use: ['style-loader', 'css-loader', 'postcss-loader', {
         loader: 'less-loader',
         options: {
           importLoaders: 1,
+          javascriptEnabled: true
         }
       }]
     }, { // 业务样式, css module
       test: /\.less$/,
-      include: SRC_PATH,
+      include: path.resolve(SRC_PATH, 'sys'),
       use: ['style-loader', {
         loader: 'css-loader',
         options: {
@@ -86,7 +88,7 @@ module.exports = {
     host: "0.0.0.0",
     proxy: {
       '/api/*': {
-        target: 'https://api.weixin.qq.com/cgi-bin',
+        target: 'https://127.0.0.1:2001',
         secure: false,
         changeOrigin: true,
       },

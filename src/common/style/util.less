@@ -1,0 +1,45 @@
+// 溢出隐藏，IE6下需要外容器设置宽度
+.f-ellipsis {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: keep-all;
+  word-wrap: normal;
+}
+
+// 超过两行显示...
+.f-ellipsis2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+// 隐藏样式
+.f-hide {
+  display: none;
+}
+
+.f-hide2 {
+  visibility: hidden;
+}
+
+.f-hide3 {
+  position: absolute;
+  left: -99999px;
+  top: -99999px;
+}
+
+// 禁止折行/允许折行
+.f-nowrap {
+  white-space: nowrap;
+  word-break: keep-all;
+  word-wrap: normal;
+}
+
+.f-wrap {
+  white-space: normal;
+  word-break: break-all;
+  word-wrap: break-word;
+}
