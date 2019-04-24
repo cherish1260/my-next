@@ -21,36 +21,27 @@ class App extends Component {
   }
 
   render() {
+    const { history } = this.props;
     return (
       <div className={style.container}>
         <header className={style.header}>
           <img src={logo} className={style.logo} alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className={style.link}
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
           <QRCode value="http://10.236.173.55:3000/" />
           <div
             className={style.btn}
             onClick={() => {
-              this.test();
-              if (typeof WeixinJSBridge === 'undefined') {
-                if (document.addEventListener) {
-                  document.addEventListener('WeixinJSBridgeReady', this.onBridgeReady, false);
-                } else if (document.attachEvent) {
-                  document.attachEvent('WeixinJSBridgeReady', this.onBridgeReady);
-                  document.attachEvent('onWeixinJSBridgeReady', this.onBridgeReady);
-                }
-              } else {
-                this.onBridgeReady();
-              }
+              // this.test();
+              // if (typeof WeixinJSBridge === 'undefined') {
+              //   if (document.addEventListener) {
+              //     document.addEventListener('WeixinJSBridgeReady', this.onBridgeReady, false);
+              //   } else if (document.attachEvent) {
+              //     document.attachEvent('WeixinJSBridgeReady', this.onBridgeReady);
+              //     document.attachEvent('onWeixinJSBridgeReady', this.onBridgeReady);
+              //   }
+              // } else {
+              //   this.onBridgeReady();
+              // }
+              history.push('/stock');
             }}
           >
             登录
