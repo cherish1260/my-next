@@ -55,7 +55,7 @@ class App extends Component {
           >
             登录
             </div>
-          <div className={`${style.text} f-wrap`}>skjgfdsfggfdgkkkkkkkkkkkkkkkkkkkkjhgjjjjjjjjjjjjjgdsfgdjgkjsgkgjkghldfg</div>
+          <div className={`${style.text} f-ellipsis2`}>skjgfdsfggfdgkkkkkkkkkkkkkkkkkkkkjhgjjjj妇科但是也有佛igofdjjjjjjjjjgdsfgdjgkjsgkgjkghldfg</div>
         </header>
       </div>
     );
