@@ -1,8 +1,8 @@
+/* eslint-disable no-undef */
 import React, { Component } from 'react';
 import QRCode from 'qrcode.react';
 import { Toast } from 'antd-mobile';
 import logo from 'img/logo.svg';
-// import Fetch from 'Fetch';
 import style from './index.less';
 
 class App extends Component {
@@ -15,9 +15,8 @@ class App extends Component {
   }
 
   test() {
-    // H5 plus事件处理
+    // H5 mobile detect事件处理
     const md = new MobileDetect(window.navigator.userAgent);
-    console.log(md);
     Toast.info(md.mobile());
   }
 
