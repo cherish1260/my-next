@@ -6,9 +6,9 @@ const Interceptor = {
     const { method } = request;
     let params = {};
     if (method === 'get') {
-      params = request.params || request.data;
+      params = request.params || request.data || {};
     } else if (method === 'post') {
-      params = request.data;
+      params = request.data || {};
     }
     const reqParams = {
     };
