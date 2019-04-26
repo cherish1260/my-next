@@ -69,6 +69,14 @@ module.exports = {
         name: 'img/[name].[hash:base64:8].[ext]',
       },
     },
+    { // 加载字体文件, 路径为[path][name].ext
+      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      loader: 'file-loader',
+      include: path.resolve(SRC_PATH, 'common/iconfont'),
+      options: {
+        name: 'common/iconfont/[name].[ext]',
+      },
+    }
     ],
   },
   plugins: [

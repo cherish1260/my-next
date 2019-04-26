@@ -6,7 +6,9 @@ const Frame = (props) => {
   const { children } = props;
   return (
     <div className="app">
-      {children}
+      <div className="main">
+        {children}
+      </div>
     </div>
   );
 };

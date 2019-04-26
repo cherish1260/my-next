@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { createForm } from 'rc-form';
 import { List, InputItem, Button, Radio, Picker } from 'antd-mobile';
+import Footer from 'footer';
 import style from './index.less';
 
 const { Item } = List;
@@ -52,7 +53,7 @@ class Stock extends Component {
   }
 
   render() {
-    const { form } = this.props;
+    const { form, history } = this.props;
     const { getFieldProps, getFieldError } = form;
     const { type, result, stock } = this.state;
     const stockInfo = stocks[stock];
@@ -143,6 +144,7 @@ class Stock extends Component {
         <List renderHeader="结果">
           <Item extra={result + (type === 2 ? '元' : '手')}>{type === 1 ? '需购入手数为' : '目标价格为'}</Item>
         </List>
+        <Footer selectedTab="my" history={history} />
       </div>
     );
   }

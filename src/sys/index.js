@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import QRCode from 'qrcode.react';
 import { Toast } from 'antd-mobile';
 import logo from 'img/logo.svg';
+import Footer from 'footer';
 import style from './index.less';
 
 class App extends Component {
@@ -30,17 +31,6 @@ class App extends Component {
           <div
             className={style.btn}
             onClick={() => {
-              // this.test();
-              // if (typeof WeixinJSBridge === 'undefined') {
-              //   if (document.addEventListener) {
-              //     document.addEventListener('WeixinJSBridgeReady', this.onBridgeReady, false);
-              //   } else if (document.attachEvent) {
-              //     document.attachEvent('WeixinJSBridgeReady', this.onBridgeReady);
-              //     document.attachEvent('onWeixinJSBridgeReady', this.onBridgeReady);
-              //   }
-              // } else {
-              //   this.onBridgeReady();
-              // }
               history.push('/stock');
             }}
           >
@@ -48,6 +38,7 @@ class App extends Component {
           </div>
           <div className={`${style.text} f-ellipsis2`}>skjgfdsfggfdgkkkkkkkkkkkkkkkkkkkkjhgjjjj妇科但是也有佛igofdjjjjjjjjjgdsfgdjgkjsgkgjkghldfg</div>
         </header>
+        <Footer selectedTab="home" history={history} />
       </div>
     );
   }
