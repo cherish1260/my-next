@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
 import { createForm } from 'rc-form';
-import { List, InputItem, Button, Radio, Picker } from 'antd-mobile';
+import { List, InputItem, Button, Radio, Picker, Flex } from 'antd-mobile';
 import Footer from 'footer';
 import style from './index.less';
 
 const { Item } = List;
-const stocksVals = [{ label: '华西能源', value: 'hx' }, { label: '摩登大道', value: 'md' }];
+const stocksVals = [{
+  label: '华西能源',
+  value: 'hx',
+}, {
+  label: '摩登大道',
+  value: 'md',
+}, {
+  label: '飞马国际',
+  value: 'fm',
+}];
 const stocks = {
   hx: {
-    prePrice: 4.25,
-    preCount: 400,
+    prePrice: 3.989,
+    preCount: 900,
   },
   md: {
-    prePrice: 7.839,
-    preCount: 700,
+    prePrice: 8.243,
+    preCount: 300,
+  },
+  fm: {
+    prePrice: 7.41,
+    preCount: 400,
   },
 };
 class Stock extends Component {
@@ -50,6 +63,10 @@ class Stock extends Component {
   _reset = () => {
     const { form } = this.props;
     form.resetFields();
+    this.setState({
+      result: '',
+      stock: [],
+    });
   }
 
   render() {
@@ -131,14 +148,11 @@ class Stock extends Component {
           {getFieldError('goal') ? <div className={style.error}>{getFieldError('goal')}</div> : null}
         </List>
         <List renderHeader="操作">
-          <Item
-            extra={(
-              <div>
-                <Button type="primary" size="small" inline onClick={this._submit}>Submit</Button>
-                <Button size="small" inline style={{ marginLeft: '5px' }} onClick={this._reset}>Reset</Button>
-              </div>
-            )}
-          >Operation
+          <Item>
+            <Flex justify="end">
+              <Button type="primary" size="small" inline onClick={this._submit}>Submit</Button>
+              <Button className={style.btn} type="ghost" size="small" inline onClick={this._reset}>Reset</Button>
+            </Flex>
           </Item>
         </List>
         <List renderHeader="结果">
