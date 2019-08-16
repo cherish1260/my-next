@@ -39,6 +39,7 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "lodash": "^4.17.14",
     "postcss-loader": "^3.0.0",
     "qrcode.react": "^0.9.3",
     "qs": "^6.7.0",
