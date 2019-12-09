@@ -12,6 +12,7 @@
     "__APP_NAME__": "readonly"
   },
   "rules": {
+    "linebreak-style": "off",
     "react/jsx-one-expression-per-line": [
       0,
       {
